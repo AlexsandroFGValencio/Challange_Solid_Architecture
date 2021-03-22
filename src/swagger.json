@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentalX Documentation",
+    "description": "This is an API Rent",
+    "version": "1.0.0",
+    "contact": {
+      "email": "alexsandrovalencio@gmail.com"
+    }
+},
+"paths": {
+  "/users": {
+    "post": {
+      "tags": ["Users"],
+      "summary": "Create a user",
+      "description": "Create a new users",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properts": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "name": "Alexsandro Valencio",
+                "description": "alexsandrovalencio@gmail.com"
+              }
+            }
+          }
+        }
+      },
+      "reponses": {
+        "201": {
+          "description": "Created"
+        },
+        "400": {
+          "description": "User already exists!"
+        }
+      }
+    },
+    "patch": {
+      "tags": ["Users"],
+      "summary": "Turn User as Admin",
+      "description": "Turn User as Admin",
+      "reponses": {
+        "201": {
+          "description": "Created"
+        },
+        "400": {
+          "description": "User already exists!"
+        }
+      }
+    },
+    "get/:user_id": {
+      "tags": ["Users"],
+      "summary": "Show information about profile",
+      "description": "Show information about profile",
+      "reponses": {
+        "200": {
+          "description": "Created"
+        },
+        "404": {
+          "description": "User not exists!"
+        }
+      }
+    }
+  }
+}
+}
